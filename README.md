@@ -1,16 +1,20 @@
-/
-  -src/ Actual server logic reside  inside source
-    index.js  //Server
-    models/
-    controllers/
-    middlewares/
-    services/
-    utils/ ->Some thing that can be common through the all code base , that must be put in utils folder
-    config/ ->for database configurations
-    repository/
+## Welcome to Flight Services
 
-  -tests/ [later]
+## Project Setup
+- clone the project on your local
+- Execute  `npm install` on the same path as of your root directory of the downloaded project.
+- Create a `.env` file in the root directory and add the following and add the environment variables
+  - `PORT = 3000`
+- Inside the `src/config` folder and create a new file `config.json` and then add the following piece of json
 
-/
-Only src folder will be uploaded because it contains all the necessary and actual logic inside it.
- 
+```
+{
+  "development": {
+    "username": <Your_DB_login_name>,
+    "password": <Your_DB_password>,
+    "database": "Flights_Search_DB_Dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+   }
+}
+```
