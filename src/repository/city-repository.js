@@ -12,10 +12,11 @@ class CityRepository {
 
     async createCity({name}){
         try{
-           const city = await City.create({name});
+           const city = await City.create({name : name});
            return city;
         }
         catch(error){
+           console.log("Something went wrong in the repository layer");
            throw {error};
         }
     }
@@ -27,11 +28,38 @@ class CityRepository {
                     id: cityId
                 }
             });
+            return true;
         }
         catch (error) {
             throw {error};
         }
     }
+
+    async getCity(cityId){
+        try{
+            const city = await City.findByPk(cityId); //Pk - Primary key
+            return city;
+        }
+        catch(error){
+            console.log("Something went wrong in the repository layer");
+            throw {error};
+        }
+    }
+
+    async upadteCity(cityId , data){
+        try{
+            const city = await City.update(data,{
+                where:{id : cityId}
+            });
+            return city;
+        }
+        catch(error){
+            console.log("Something went wrong in the repository layer");
+            throw {error};
+        }
+    }
 }
 
-module.exports = CityRepository;
+
+
+module.exports = CityRepository; 
