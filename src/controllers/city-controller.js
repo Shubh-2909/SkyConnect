@@ -1,4 +1,4 @@
-const {CityService, CityService} = require('../services/index')
+const {CityService} = require('../services/index')
 // We make the object of CityService class globally so that we can use everywhere it needed without doing for every time in function.
 const cityService = new CityService();
  
