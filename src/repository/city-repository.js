@@ -9,7 +9,7 @@ class CityRepository {
    // Object destructuring
    // const { name } = person;
    // console.log(name); // Output: John
-
+ 
     async createCity({name}){
         try{
            const city = await City.create({name : name});
@@ -51,7 +51,7 @@ class CityRepository {
             const city = await City.update(data,{
                 where:{id : cityId}
             });
-            return city;
+            return  city;
         }
         catch(error){
             console.log("Something went wrong in the repository layer");
