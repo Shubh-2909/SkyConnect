@@ -46,6 +46,16 @@ class CityService{
             throw {error};
         }
     }
+
+    async getAllCities(filter){
+        try {
+            const  cities = await this.cityRepository.getAllCities({name : filter.name}); //Making new object and named a key as name and take value from filter.name
+            return cities;
+        } catch (error) {
+            console.log("Something went wrong at service layer")
+            throw {error};
+        }
+    }
 }
 
 module.exports = CityService
