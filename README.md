@@ -46,3 +46,8 @@
   ```
   npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
   ```
+
+  Using Seed to migrate the data into database
+  ```
+  npx sequelize seed:generate --name add-airplanes
+  ```
