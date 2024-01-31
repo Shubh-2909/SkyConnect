@@ -51,3 +51,5 @@
   ```
   npx sequelize seed:generate --name add-airplanes
   ```
+
+  
